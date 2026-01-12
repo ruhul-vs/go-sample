@@ -6,7 +6,7 @@ COPY go.mod ./
 RUN go mod download
 
 COPY . .
-RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 gsasaso build -o app
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o app
 
 # Runtime stage
 FROM alpine:3.20
